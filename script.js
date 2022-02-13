@@ -33,7 +33,11 @@ function verifyPin() {
   let typedNumbers = document.getElementById("typed-numbers").value;
   let failNotification = document.getElementById("notify-fail");
   let successNotification = document.getElementById("notify-success");
-  if (pin == typedNumbers) {
+  if (typedNumbers == "") {
+    failNotification.style.display = "block";
+    successNotification.style.display = "none";
+  }
+  else if (pin == typedNumbers) {
     successNotification.style.display = "block";
     failNotification.style.display = "none";
   } else {
